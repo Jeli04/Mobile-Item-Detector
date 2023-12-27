@@ -14,6 +14,7 @@
 		D09962F22B38F46800608D74 /* Item_DetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09962F12B38F46800608D74 /* Item_DetectorTests.swift */; };
 		D09962FC2B38F46800608D74 /* Item_DetectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09962FB2B38F46800608D74 /* Item_DetectorUITests.swift */; };
 		D09962FE2B38F46800608D74 /* Item_DetectorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09962FD2B38F46800608D74 /* Item_DetectorUITestsLaunchTests.swift */; };
+		D099630B2B38F49900608D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099630A2B38F49900608D74 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D09962F72B38F46800608D74 /* Item-DetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Item-DetectorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09962FB2B38F46800608D74 /* Item_DetectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_DetectorUITests.swift; sourceTree = "<group>"; };
 		D09962FD2B38F46800608D74 /* Item_DetectorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_DetectorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D099630A2B38F49900608D74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				D09962E02B38F46700608D74 /* Item_DetectorApp.swift */,
 				D09962E22B38F46700608D74 /* ContentView.swift */,
+				D099630A2B38F49900608D74 /* ViewController.swift */,
 				D09962E42B38F46800608D74 /* Assets.xcassets */,
 				D09962E62B38F46800608D74 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D099630B2B38F49900608D74 /* ViewController.swift in Sources */,
 				D09962E32B38F46700608D74 /* ContentView.swift in Sources */,
 				D09962E12B38F46700608D74 /* Item_DetectorApp.swift in Sources */,
 			);
@@ -422,8 +426,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Item-Detector/Preview Content\"";
+				DEVELOPMENT_TEAM = TF449DNAT3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App uses camera to detect objects";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,8 +456,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Item-Detector/Preview Content\"";
+				DEVELOPMENT_TEAM = TF449DNAT3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App uses camera to detect objects";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -477,6 +485,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF449DNAT3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -496,6 +505,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF449DNAT3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
