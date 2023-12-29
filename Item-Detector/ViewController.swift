@@ -32,6 +32,33 @@ class ViewController: UIViewController{
             self.captureSession.startRunning()
         }
     }
+
+    // if the phone is flipped change the camera from vertical to horizontal
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        screenRect = UIScreen.main.bounds
+        self.previewLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height)
+
+        // adjusts the camera based on orientation
+        switch UIDevice.current.orientation{
+            // Home button on top
+        case UIDeviceOrientation.portraitUpsideDown:
+            self.previewLayer.connection?.videoRotationAngle = 270
+
+            // Home button on right
+        case UIDeviceOrientation.landscapeLeft:
+            self.previewLayer.connection?.videoRotationAngle = 0
+
+            // Home button on left
+        case UIDeviceOrientation.landscapeRight:
+            self.previewLayer.connection?.videoRotationAngle = 180
+            
+            // Home button on bottom
+        case UIDeviceOrientation.portrait:
+            self.previewLayer.connection?.videoRotationAngle = 90
+            
+        default: break
+        }
+    }
     
     func checkPermission(){
         // switch statement for prompting user for camera access
@@ -73,8 +100,6 @@ class ViewController: UIViewController{
         previewLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
-        // ERROR IS IN THIS LINE
-//        previewLayer.connection?.videoRotationAngle = .pi / 2.0
         previewLayer.connection?.videoOrientation = .portrait
 
         // updates the UI in the main queue
