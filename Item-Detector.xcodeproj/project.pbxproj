@@ -15,6 +15,9 @@
 		D09962FC2B38F46800608D74 /* Item_DetectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09962FB2B38F46800608D74 /* Item_DetectorUITests.swift */; };
 		D09962FE2B38F46800608D74 /* Item_DetectorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09962FD2B38F46800608D74 /* Item_DetectorUITestsLaunchTests.swift */; };
 		D099630B2B38F49900608D74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099630A2B38F49900608D74 /* ViewController.swift */; };
+		D099630D2B3E559500608D74 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099630C2B3E559500608D74 /* Detector.swift */; };
+		D099630F2B3E588B00608D74 /* YOLOv3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D099630E2B3E588B00608D74 /* YOLOv3Int8LUT.mlmodel */; };
+		D09963112B40BECB00608D74 /* YOLOv3TinyInt8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D09963102B40BECB00608D74 /* YOLOv3TinyInt8LUT.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		D09962FB2B38F46800608D74 /* Item_DetectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_DetectorUITests.swift; sourceTree = "<group>"; };
 		D09962FD2B38F46800608D74 /* Item_DetectorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_DetectorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D099630A2B38F49900608D74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D099630C2B3E559500608D74 /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		D099630E2B3E588B00608D74 /* YOLOv3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = YOLOv3Int8LUT.mlmodel; path = ../../../../../Downloads/YOLOv3Int8LUT.mlmodel; sourceTree = "<group>"; };
+		D09963102B40BECB00608D74 /* YOLOv3TinyInt8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = YOLOv3TinyInt8LUT.mlmodel; path = ../../../../../Downloads/YOLOv3TinyInt8LUT.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +102,12 @@
 		D09962DF2B38F46700608D74 /* Item-Detector */ = {
 			isa = PBXGroup;
 			children = (
+				D09963102B40BECB00608D74 /* YOLOv3TinyInt8LUT.mlmodel */,
+				D099630E2B3E588B00608D74 /* YOLOv3Int8LUT.mlmodel */,
 				D09962E02B38F46700608D74 /* Item_DetectorApp.swift */,
 				D09962E22B38F46700608D74 /* ContentView.swift */,
 				D099630A2B38F49900608D74 /* ViewController.swift */,
+				D099630C2B3E559500608D74 /* Detector.swift */,
 				D09962E42B38F46800608D74 /* Assets.xcassets */,
 				D09962E62B38F46800608D74 /* Preview Content */,
 			);
@@ -261,8 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D099630B2B38F49900608D74 /* ViewController.swift in Sources */,
+				D099630F2B3E588B00608D74 /* YOLOv3Int8LUT.mlmodel in Sources */,
 				D09962E32B38F46700608D74 /* ContentView.swift in Sources */,
 				D09962E12B38F46700608D74 /* Item_DetectorApp.swift in Sources */,
+				D099630D2B3E559500608D74 /* Detector.swift in Sources */,
+				D09963112B40BECB00608D74 /* YOLOv3TinyInt8LUT.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

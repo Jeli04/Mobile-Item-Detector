@@ -10,7 +10,14 @@ import SwiftUI
 import AVFoundation // used for accessing the camera
 import Vision
 
-class ViewController: UIViewController{
+// LAYERS TOP TO BOTTOM
+// bounding boxes
+// detectionLayer
+// previewLayer (live camera feed)
+// self.view.layer
+
+
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate{
     private var permissionGranted = false;  // checks if the device allows camera usage
     
     // let are const variables
@@ -22,6 +29,11 @@ class ViewController: UIViewController{
     private var previewLayer = AVCaptureVideoPreviewLayer()
     var screenRect: CGRect! = nil   // for view dimensions, CGRect is a UIKit rectangle object
     
+    // variables for the item detector
+    private var videoOutput = AVCaptureVideoDataOutput()
+    var requests = [VNRequest]()    // an array of VNRequest objects
+    var detectionLayer: CALayer! = nil  // before detecting anything its nil
+
     // once the app opens override the view with the live camera if permission is granted
     override func viewDidLoad() {
         checkPermission()   // before continuing to the async commands check if permission is granted
@@ -29,6 +41,8 @@ class ViewController: UIViewController{
         sessionQueue.async { [unowned self] in
             guard permissionGranted else{return}
             self.setupCaptureSession()
+            self.setupLayers()  // function from extention 
+            self.setupDetector()   // function from extension
             self.captureSession.startRunning()
         }
     }
@@ -58,6 +72,8 @@ class ViewController: UIViewController{
             
         default: break
         }
+        
+        updateLayers()  // updates the detection layer if there is a orientation change
     }
     
     func checkPermission(){
@@ -101,7 +117,13 @@ class ViewController: UIViewController{
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
         previewLayer.connection?.videoOrientation = .portrait
-
+        
+        // detector
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sampleBufferQueue"))
+        captureSession.addOutput(videoOutput)
+        
+        videoOutput.connection(with: .video)?.videoOrientation = .portrait
+        
         // updates the UI in the main queue
         DispatchQueue.main.async { [weak self] in
             self!.view.layer.addSublayer(self!.previewLayer)

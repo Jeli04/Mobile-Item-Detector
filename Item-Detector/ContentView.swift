@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var buttonClicked = false
+    let myArray = ["Apple", "Banana", "Orange", "Apple", "Banana", "Orange", "Apple", "Banana", "Orange"] // test
 
     var body: some View {
         HostedViewController()
@@ -19,16 +20,16 @@ struct ContentView: View {
             print("Button tapped!")
             buttonClicked.toggle()
         }) {
-            Text("Detect Item")
+            Text(buttonClicked ? "Close" : "Detect Item")
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.blue)
                 .cornerRadius(10)
         }
         if buttonClicked{
-            Text("Opening Camera")
-                .padding()
-                .foregroundColor(.green)
+            List(myArray, id: \.self) { item in
+                Text(item)
+            }
         }
     }
 }
