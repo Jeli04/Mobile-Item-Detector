@@ -1,2 +1,2 @@
 # Mobile-Item-Detector
-Item Detector iOS App
+Simple Swift Item Detector App. 
